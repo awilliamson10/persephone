@@ -1,0 +1,4 @@
+python-dotenv
+etherscan-python
+web3
+discord
