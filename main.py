@@ -46,13 +46,11 @@ async def on_message(message):
             watch_list.append(message.content[7:])
 
 
-@tasks.loop(seconds=120)
+@tasks.loop(seconds=180)
 async def watch(start_block):
     await client.wait_until_ready()
-    channel = client.get_channel(929862118407290880)
     last_block = start_block
     start_block = await getLatestTxn(last_block)
-    await channel.send(f"last block checked: {start_block}")
 
 
 watch.start(eth.get_block_number_by_timestamp(int(time.time()), "before"))
