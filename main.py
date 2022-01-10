@@ -20,7 +20,7 @@ async def ensName(addr):
     if ens is None:
         return addr
     else:
-        return ens
+        return ens[0]
 
 
 async def getLatestTxn(last_block):
